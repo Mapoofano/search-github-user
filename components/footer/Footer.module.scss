@@ -1,11 +1,13 @@
 .footer {
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid #222;
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
   width: 100%;
+  color: #C9D1D9;
   .username {
     font-weight: 700;
+    text-decoration: underline;
   }
 }
