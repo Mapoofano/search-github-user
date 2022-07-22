@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 300px;
+  width: 200px;
+  border-radius: 15px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  transition: 300ms;
+  cursor: pointer;
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  span {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &:hover {
+    border: 1px solid #aaa;
+  }
+}
+
+.cardImage {
+  border-radius: 20%;
+}

@@ -1,0 +1,19 @@
+.container {
+  padding: 0 2rem;
+  height: 100vh;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    padding: 4rem 0;
+    flex: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+}
