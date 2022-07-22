@@ -4,7 +4,6 @@ import React from 'react';
 import styles from './Card.module.scss';
 
 const Card = ({ user }: any) => {
-  console.log(user);
   return (
     <Link href="/profile/[username]" as={`profile/${user.login}`}>
       <div className={styles.card}>
@@ -12,15 +11,12 @@ const Card = ({ user }: any) => {
           <Image
             src={user.avatar_url}
             alt={user.login}
-            width={100}
-            height={100}
+            width={50}
+            height={50}
             className={styles.cardImage}
           />
         )}
-        <h4>Username: {user.login}</h4>
-        <h4>Name: {user.name}</h4>
-        <span>Followers: {user.followers}</span>
-        <span>Following: {user.following}</span>
+        <h4>{user.login.toUpperCase()}</h4>
       </div>
     </Link>
   );

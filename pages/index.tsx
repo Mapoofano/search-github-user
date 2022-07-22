@@ -22,19 +22,21 @@ const Home: NextPageWithLayout = () => {
   }, [input]);
 
   const handleSearchUsername = async (userName: string) => {
-    const res = await fetch(`https://api.github.com/users/${userName}`);
+    const params = new URLSearchParams({
+      q: userName,
+    });
+    const res = await fetch(`https://api.github.com/search/users?${params}`);
     const data = await res.json();
-    console.log(data);
     if (!data) return;
     setData(data);
     setLoading(false);
   };
 
-  const genUsersCards = (_user: any) => {
+  const genUsersCards = (_list: any) => {
     if (isLoading) return <p>Loading...</p>;
-    if (!_user) return <p>No user found</p>;
-
-    if (_user.length !== 0) return <Card user={_user} />;
+    if (_list.total_count === 0) return <p>No user found</p>;
+    if (_list.items && _list.items !== 0)
+      return _list.items.map((user: any) => <Card key={user.id} user={user} />);
   };
 
   return (
@@ -48,21 +50,10 @@ const Home: NextPageWithLayout = () => {
           type="text"
         />
       </div>
-      <div>{genUsersCards(data)}</div>
+      <div className={styles.userList}>{genUsersCards(data)}</div>
     </section>
   );
 };
-
-// export async function getServerSideProps(context: string) {
-//   const params = new URLSearchParams({
-//     q: context,
-//   });
-
-//   const res = await fetch(`https://api.github.com/search/users?${params}`);
-//   const data = await res.json();
-
-//   return { props: { data } };
-// }
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>;

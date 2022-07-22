@@ -1,27 +1,26 @@
 .card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
-  height: 300px;
-  width: 200px;
+  max-height: 80px;
+  width: 100%;
   border-radius: 15px;
-  border: 1px solid #e6e6e6;
-  background-color: #fff;
+  border: 1px solid #222;
+  background-color: inherit;
   transition: 300ms;
   cursor: pointer;
+  color: #c9d1d9;
+  margin: 1% 0;
+  padding: 1rem;
 
   h4 {
     font-size: 1rem;
-    font-weight: 400;
-  }
-  span {
-    font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
+    margin: 0 1rem;
   }
 
   &:hover {
-    border: 1px solid #aaa;
+    border: 1px solid #e6e6e6;
   }
 }
 

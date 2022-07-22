@@ -1,0 +1,51 @@
+.profile {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #222;
+  border-radius: 10px;
+
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    padding: 1rem;
+    height: 100%;
+    border-right: 1px solid #222;
+    color: #c9d1d9;
+    .profileAvatar {
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin: 1rem 0;
+    }
+
+    h4 {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    p {
+      margin: 2rem 0;
+
+      width: 100%;
+      font-size: 1.2rem;
+    }
+
+    div {
+      margin: 1rem 0;
+      display: flex;
+      span {
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .repos {
+    display: flex;
+    width: 100%;
+  }
+}
