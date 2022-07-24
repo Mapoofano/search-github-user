@@ -7,7 +7,6 @@ import styles from './Profile.module.scss';
 const Profile = ({ info }: any) => {
   const { login, name, bio, followers, following, avatar_url, public_repos } =
     info;
-  console.log(info);
   return (
     <article className={styles.profile}>
       <section className={styles.profileInfo}>
