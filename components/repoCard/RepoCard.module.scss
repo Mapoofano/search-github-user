@@ -1,7 +1,23 @@
 .repoCard {
   display: flex;
-  width: 40%;
-  h1 {
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #222;
+  width: 35%;
+  height: 150px;
+  padding: 16px;
+  border-radius: 6px;
+  h4 {
     color: #58a6ff;
+  }
+  p {
+    font-size: 0.8rem;
+    color: #c9d1d9;
+  }
+
+  span {
+    color: #c9d199;
+    font-size: 0.7rem;
+    font-weight: 700;
   }
 }

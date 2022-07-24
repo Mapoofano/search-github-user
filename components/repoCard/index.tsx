@@ -1,14 +1,22 @@
+import Link from 'next/link';
 import React from 'react';
-import styles from "./RepoCard.module.scss"
-
+import styles from './RepoCard.module.scss';
 
 const RepoCard = ({ repo }: any) => {
-  const { name, created_at, description, language, visibility, updated_at } =
-    repo;
+  const { name, description, language, html_url } = repo;
+
+  console.log(repo);
   return (
-    <div className={styles.repoCard}>
-      <h1>{name}</h1>
-    </div>
+    <a
+      href={html_url}
+      target="_blank"
+      rel="noreferrer"
+      className={styles.repoCard}
+    >
+      <h4>{name}</h4>
+      <p>{description}</p>
+      <span>{language}</span>
+    </a>
   );
 };
 

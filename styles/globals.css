@@ -17,3 +17,9 @@ a {
   box-sizing: border-box;
   outline: none;
 }
+
+
+.disable {
+  pointer-events: none;
+  opacity: 0.3;
+}
