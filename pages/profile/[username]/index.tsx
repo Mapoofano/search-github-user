@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import React, { ReactElement } from 'react';
 import Layout from '../../../components/layout';
+import Repos from '../../../components/repos';
 import styles from './Profile.module.scss';
 
-const Profile = ({ data }: any) => {
-  const { login, name, bio, followers, following, avatar_url } = data;
-   
+const Profile = ({ info }: any) => {
+  const { login, name, bio, followers, following, avatar_url, public_repos } =
+    info;
+  console.log(info);
   return (
     <article className={styles.profile}>
       <section className={styles.profileInfo}>
@@ -28,7 +30,9 @@ const Profile = ({ data }: any) => {
           <span>following: {following}</span>
         </div>
       </section>
-      <section className={styles.repos}></section>
+      <section className={styles.repos}>
+        <Repos login={login} public_repos={public_repos} />
+      </section>
     </article>
   );
 };
@@ -39,8 +43,9 @@ export async function getServerSideProps(context: any) {
   const res = await fetch(
     `https://api.github.com/users/${context.params.username}`
   );
-  const data = await res.json();
-  return { props: { data } };
+  const info = await res.json();
+
+  return { props: { info } };
 }
 
 Profile.getLayout = function getLayout(page: ReactElement) {
